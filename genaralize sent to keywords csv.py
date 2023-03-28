@@ -25,17 +25,18 @@ output_file = pd.DataFrame(columns=["ISBN","Book_Title","Description","sentiment
 
 
 for i in range(2,685):
-    if (float(data["sentiment_score_neg"][i]) >= float(data["sentiment_score_neu"][i]) and float(data["sentiment_score_pos"][i])):
+    tempvaluearray =[data["sentiment_score_neg"][i],data["sentiment_score_neu"][i],data["sentiment_score_pos"][i]]
+    if (float(data["sentiment_score_neg"][i]) == max(tempvaluearray)):
         output_file.loc[i] = [data["ISBN"][i], data["Book_Title"][i], data["Description"][i],data["sentiment_score_neg"][i],data["sentiment_score_neu"][i]
             ,data["sentiment_score_pos"][i],data["sentiment_score_compound"][i],0]
         continue
 
-    elif(float(data["sentiment_score_neu"][i]) >= float(data["sentiment_score_neg"][i]) and float(data["sentiment_score_pos"][i])):
+    elif(float(data["sentiment_score_neu"][i]) == max(tempvaluearray)):
         output_file.loc[i] = [data["ISBN"][i], data["Book_Title"][i], data["Description"][i],data["sentiment_score_neg"][i], data["sentiment_score_neu"][i]
             ,data["sentiment_score_pos"][i], data["sentiment_score_compound"][i],1]
         continue
 
-    elif(float(data["sentiment_score_pos"][i]) >= float(data["sentiment_score_neg"][i]) and float(data["sentiment_score_neu"][i])):
+    elif(float(data["sentiment_score_pos"][i]) == max(tempvaluearray)):
         output_file.loc[i] = [data["ISBN"][i], data["Book_Title"][i], data["Description"][i],data["sentiment_score_neg"][i], data["sentiment_score_neu"][i]
             ,data["sentiment_score_pos"][i], data["sentiment_score_compound"][i],2]
         continue

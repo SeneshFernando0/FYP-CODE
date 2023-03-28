@@ -9,9 +9,24 @@ df = pd.read_csv('Output_Dataset_for_tensorflow.csv', delimiter=",")
 
 print(df.head())
 print(df.info())
-print(df['sentiment_type'].value_counts())
+
+
+
+df['sentiment_type'] = df['sentiment_type'].astype(int)
+
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
+
+
+token = tokenizer.encode_plus(
+    df['Description'].iloc[0],
+    max_length=256,
+    truncation=True,
+    padding='max_length',
+    add_special_tokens=True,
+    return_tensors='tf'
+)
+
 
 X_input_ids = np.zeros((len(df), 256))
 X_attn_masks = np.zeros((len(df), 256))
@@ -34,7 +49,9 @@ def generate_training_data(df, ids, masks, tokenizer):
 
 X_input_ids, X_attn_masks = generate_training_data(df, X_input_ids, X_attn_masks, tokenizer)
 
-labels = np.zeros((len(df), 5))
+labels = np.zeros((len(df), 3))
+
+labels[np.arange(len(df)), df['sentiment_type'].values] = 1 # one-hot encoded target tensor
 
 dataset = tf.data.Dataset.from_tensor_slices((X_input_ids, X_attn_masks, labels))
 
@@ -50,14 +67,13 @@ dataset = dataset.map(SentimentDatasetMapFunction)  # converting to required for
 
 dataset = dataset.shuffle(10000).batch(16, drop_remainder=True)  # batch size, drop any left out tensor
 
-train_size = int(
-    (len(df) // 16) * 0.8)  # for each 16 batch of data we will have len(df)//16 samples, take 80% of that for train.
+train_size = int((len(df) // 16) * 0.8)  # for each 16 batch of data we will have len(df)//16 samples, take 80% of that for train.
 
 train_dataset = dataset.take(train_size)
 val_dataset = dataset.skip(train_size)
 
 # model------------------------------------------------------------------------------------------------------------------
-
+#-----------------------------------------------------------
 model = TFBertModel.from_pretrained('bert-base-cased')  # bert base model with pretrained weights
 
 
@@ -67,7 +83,7 @@ attn_masks = tf.keras.layers.Input(shape=(256,), name='attention_mask', dtype='i
 
 bert_embds = model.bert(input_ids, attention_mask=attn_masks)[1] # 0 -> activation layer (3D), 1 -> pooled output layer (2D)
 intermediate_layer = tf.keras.layers.Dense(512, activation='relu', name='intermediate_layer')(bert_embds)
-output_layer = tf.keras.layers.Dense(5, activation='softmax', name='output_layer')(intermediate_layer) # softmax -> calcs probs of classes
+output_layer = tf.keras.layers.Dense(3, activation='softmax', name='output_layer')(intermediate_layer) # softmax -> calcs probs of classes
 
 sentiment_model = tf.keras.Model(inputs=[input_ids, attn_masks], outputs=output_layer)
 print(sentiment_model.summary())
@@ -101,8 +117,6 @@ hist = sentiment_model.fit(
 )
 
 sentiment_model.save('sentiment_model')
-
-
 
 
 
