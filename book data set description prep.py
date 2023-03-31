@@ -18,13 +18,13 @@ print("rows : ",row)
 ran = range(row)
 
 
-file = open('numbers.txt','w')
+file = open('numbers new 7.txt','w')
 
 
 #creating data frame and the columns
 output_file = pd.DataFrame(columns=["ISBN","Book_Title","Description"])
 
-for i in range(2,1000):
+for i in range(145000,170000):
  try:
     user_input = data.at[i, 'ISBN']
     with urllib.request.urlopen(base_api_link + user_input) as f:
@@ -54,7 +54,7 @@ for i in range(2,1000):
 file.close()
 
 #save as csv file
-output_file.to_csv('Output_Dataset.csv', encoding='utf-8')
+output_file.to_csv('Output_Dataset new 7.csv', encoding='utf-8')
 
 
 
