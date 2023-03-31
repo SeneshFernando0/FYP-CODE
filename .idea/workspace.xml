@@ -2,43 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80c838b4-bddd-45e1-aa96-19d83f694f8b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset sentiment analysis_prep.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Finalset.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Full back end system test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ML model prototype.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output_Dataset new 1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output_Dataset new 2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output_Dataset new 3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output_Dataset new 4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output_Dataset new 5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output_Dataset new 6.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output_Dataset new 7.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output_Dataset.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output_Dataset_for_tensorflow.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book data set description prep.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clensing.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/code/Output_Dataset_for_tensorflow.csv" beforeDir="false" afterPath="$PROJECT_DIR$/code/Output_Dataset_for_tensorflow.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/genaralize sent to keywords csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/genaralize sent to keywords csv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/tensor_flow_seniment_analysis_dataprep_and_model.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/code/tensorflow_prediction_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/genaralize sent to keywords csv.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/google api testing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_books.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/numbers new 1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/numbers new 2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/numbers new 3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/numbers new 4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/numbers new 5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/numbers new 6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/numbers new 7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/numbers.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensor_flow_seniment_analysis_dataprep_and_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensorflow_prediction_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter api testing.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +26,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "E:/IIT/FYP/code",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
@@ -72,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680262928625</updated>
       <workItem from="1680262934776" duration="63000" />
+      <workItem from="1680263014387" duration="473000" />
     </task>
     <servers />
   </component>
