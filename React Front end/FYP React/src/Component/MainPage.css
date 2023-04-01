@@ -1,0 +1,25 @@
+.form {
+    max-width:500px;
+    height: 100px;
+    position: relative;
+    background-color: rgb(183, 198, 226);
+  
+  }
+
+  .button{
+    background-color: rgb(183, 198, 226);
+  }
+
+
+  .bar1{
+    width:500px;
+    height: 20px;
+    background-color: rgb(183, 198, 226);
+  }
+
+  .bar2{
+    width:500px;
+    height: 30px;
+    background-color: rgb(183, 198, 226);
+  }
+

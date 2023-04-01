@@ -1,5 +1,26 @@
-import Message from "./message"
+import { useState } from 'react'
+import Header from './Component/Header'
+import MainPage from './Component/MainPage'
+import "./App.css";
 
-function App(){
-  return<div><Message></Message></div>
-}export default App;
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+    <div className='Header'>
+    <Header></Header>
+    </div>
+
+    <div className='obs'></div>
+    
+    
+    <div className='Main'>
+      <MainPage></MainPage>
+    </div>
+    
+
+    </div>
+  )
+}
+export default App
