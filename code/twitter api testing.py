@@ -30,6 +30,7 @@ limit = 5
 tweets = api.user_timeline(screen_name=user,count=limit, tweet_mode='extended')
 
 
+
 #create data frame
 
 column = ['user_name','tweet']
@@ -39,7 +40,7 @@ for tweet in tweets:
     data.append([tweet.user.screen_name, tweet.full_text])
 
 dataframe = pd.DataFrame(data, columns=column)
-print(dataframe)
+
 
 
 #sentiment analysis ----------------------------------------------------------------------------------------------------

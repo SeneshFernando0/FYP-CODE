@@ -5,7 +5,12 @@ import tensorflow as tf
 from transformers import BertTokenizer
 from transformers import TFBertModel
 
+
+
+
 df = pd.read_csv('Output_Dataset final 4.3.2023 tensorflow ready.csv', delimiter=",")
+
+
 
 print(df.head())
 print(df.info())
@@ -94,11 +99,11 @@ acc = tf.keras.metrics.CategoricalAccuracy('accuracy')
 
 sentiment_model.compile(optimizer=optim, loss=loss_func, metrics=[acc])
 
+
 hist = sentiment_model.fit(
     train_dataset,
     validation_data=val_dataset,
-    epochs=25
-)
+    epochs=25)
 
 sentiment_model.save('sentiment_model new')
 
